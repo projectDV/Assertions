@@ -1,0 +1,17 @@
+Operation:-
+-data_out = data_in+4
+-takes 5 clock cycles to execute
+
+                         |---------------------------------|
+         valid_in        |                                 |--------------->valid_out
+     ------------------->|                                 |
+                         |                                 |
+                         |                                 |
+          data_in        |                                 |
+     ------------------->|                                 |---------------->data_out
+                         |---------------------------------|
+
+property data_integrity;
+	reg [7:0]data_temp;
+	@(posedge clk) (valid_in,data_temp=data_in)|-> (valid_out==1 && data_out=data_temp+4);
+endproperty 
