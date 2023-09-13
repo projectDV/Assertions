@@ -1,0 +1,9 @@
+property p1;
+  @(posedge clk)
+  $rose(en)|->(sig_a[*2:6]);
+endproperty
+
+prop_1: assert property (p1)
+  $info("Assertion Passed");
+  else
+    $error("Assertion Failed");
