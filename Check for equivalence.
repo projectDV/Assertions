@@ -1,0 +1,6 @@
+Case:-
+  @(posedge clk) req|=>##2 $rose(ack);
+  @(posedge clk) req|->##3 $rose(ack);
+
+Answer:-
+Yes both are same. That is, for the first case after REQ is asserted, after next 2 clock cycles (Overall 3 clock cycles) ACK goes high. But, for the second case As soon as REQ high, immediately after 3 clock cycle ACK is high.
