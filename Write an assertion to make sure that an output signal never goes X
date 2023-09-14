@@ -1,0 +1,4 @@
+property p1;
+  @(posedge clk)
+  1|->!(isunkown(out));
+endproperty
